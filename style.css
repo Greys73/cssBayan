@@ -1,23 +1,39 @@
+img{
+    width: 30%;
+    height: 30%;
+}
+h1 {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    color: black !important;
+}
+
 input{
     display: none;
 }
-h1 {
-    margin: 5% 10%;
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+input:checked + label {
+    font-weight: bold;
 }
+input:checked + label::before {
+    transition: transform 0.5s;
+    transform: rotate(90deg);
+}
+input:checked + label > .container {
+    height: auto;
+    transform: scale(1);
+}
+
 .accordion {
-    margin: 5% 10%;
+    margin: auto;
+    max-width: 50em;
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
     background-color: rgb(235, 234, 234);
     cursor: pointer;
-    color: rgb(150, 48, 1);
+    color: blue;
 }
-
 .accordion:hover{
     color: rgb(0, 0, 0);
 }
-
-.accordion:hover > label::after {
+.accordion:hover > label:before {
     content: '\276F';
     float: right;
 }
@@ -29,9 +45,14 @@ h1 {
     cursor: pointer;
     margin: 0 auto;
     height: 0;
-    line-height: 18px;
-    transition: padding 0.5s;
+    line-height: 18px;  
+    transform: scale(0.5);
+    transition: all 1s;
     background-color: rgb(209, 209, 209);
+}
+.cotainer:hover {
+    height: auto;
+    transform: scale(1);   
 }
 
 label {
@@ -44,24 +65,12 @@ label {
     background-color: rgb(205, 231, 209);
 }
 label:hover {
-    font-weight: bold;
-}
-label:hover + .container {
     height: auto;
 }
-
-input:checked + label {
-    font-weight: bold;
-}
-
-label::after {
-    content: '';    
-}
-
-input:checked + label::after {
-    transition: transform 0.5s;
-    transform: rotate(90deg);
-}
-input:checked + label + .container {
+label:hover > .container {
     height: auto;
+    transform: scale(1);
+}
+label::before {
+    content: ' ';    
 }
