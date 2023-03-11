@@ -3,9 +3,9 @@ html{
 }
 img{
     width: 50%;
-    height: 50%;    
+    height: 50%;
 }
-h1 {    
+h1 {
     color: black !important;
     margin: 1%;
 }
@@ -13,13 +13,13 @@ h1 {
     display: inline-block;
     width: 95%;
 }
-.meme-icon {        
+.meme-icon {
     display: inline-block;
     margin-right: 0.5em;
     opacity: 0;
     color: black !important;
     transform: rotate(0deg);
-    transition: all 0.5s ease;    
+    transition: all 0.5s ease;
 }
 
 input{
@@ -29,52 +29,52 @@ input:checked + label {
     color: #000;
     font-weight: bold;
 }
-input:checked + label > .meme-icon {    
+input:checked + label > .meme-icon {
     transform: rotate(90deg);
 }
 input:checked + label > .container {
     height: auto;
-    transform: scale(1);
+    max-height: 50em;
+    opacity: 1;
 }
 
 .accordion {
     display: block;
     max-width: 600px;
-    margin: auto;       
+    margin: auto;
     background-color: rgb(245, 245, 245);
     cursor: pointer;
     color: rgb(0, 180, 255);
 }
 .accordion:hover,
-.accordion:hover > label > .meme-icon {    
+.accordion:hover > label > .meme-icon {
     opacity: 1;
     color: rgb(120, 120, 120);
 }
 
-.container {    
+.container {
     overflow: hidden;
-    text-align: center;    
+    text-align: center;
     height: 0;
-    transform: scale(0.5);
-    transition: all 0.5s ease;    
+    max-height: 0;
+    opacity: 0.5;
+    transition: all 2s ease;
 }
 
 label {
-    width: 97%;
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-size: 1.3em;
     padding: 10px 20px;
     transition: all 0.5s;
 }
-label:hover {
-    height: auto;
-    color: #363434;
-}
+label:hover,
 label:hover > .container {
+    color: #000;
     height: auto;
-    transform: scale(1);
+    max-height: 50rem;
+    opacity: 1;
 }
 label:active {
-    opacity: 0.5; 
+    opacity: 0.5;
 }
