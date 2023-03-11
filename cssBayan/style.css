@@ -49,6 +49,7 @@ input:checked + label > .container {
 }
 .accordion:hover,
 .accordion:hover > label > .meme-icon {
+    color: rgb(150, 150, 150);
     opacity: 1;    
 }
 
